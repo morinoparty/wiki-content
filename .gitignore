@@ -1,10 +1,12 @@
 node_modules
+.cloudflare/
 .wrangler
 .dev.vars
+.env
 *.log
 .DS_Store
 
-# generated index files
+# generated index files (hagaki generate)
 content/article.json
 content/categories.json
 content/slug-index.json

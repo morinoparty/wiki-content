@@ -1,51 +1,53 @@
 # wiki-content
 
-MoripaWiki ([wiki-frontend](https://github.com/Nlkomaru/wiki-frontend)) のコンテンツリポジトリ。
+MoripaWiki ([wiki-frontend](https://github.com/morinoparty/wiki-frontend)) のコンテンツリポジトリ。
 [hagaki のコンテンツフォーマット](https://github.com/Nlkomaru/hagaki/blob/main/sample/README.md)に従い、
-`content/` を Cloudflare Workers Assets で配信します。コードは持たず、
-生成 (`hagaki generate`) と配信 worker (`hagaki/content-worker`) は
+`content/` を Cloudflare Workers (Workers Assets) で配信します。index 群の生成
+(`hagaki generate`) と配信 worker (`hagaki/content-worker`) は
 [hagaki](https://github.com/Nlkomaru/hagaki) をライブラリとして使います。
 
-main への push で GitHub Actions が index 群を生成してデプロイします
-(→ <https://wiki-content.moripa.nikomaru.dev>)。
+- 配信 URL: `https://wiki-content.<subdomain>.workers.dev` (Worker 名 `wiki-content`。独自ドメインなし)
+- デプロイ: Cloudflare CLI [`cf`](https://developers.cloudflare.com/cf/) (beta)。main への push で GitHub Actions が実行
 
-## ディレクトリ
+## 構成
 
 ```
-content/
-├── article/
-│   └── <uuid>/                 # 記事ディレクトリ (uuid = frontmatter の uuid)
-│       ├── index.mdx           #   記事本体 (frontmatter + MDX)
-│       ├── info.json           #   ← 生成物 (履歴マージ済みメタデータ)
-│       └── assets/
-│           └── <imageId>.avif  #   その記事に属する画像 (AVIF 固定)
-├── categories/<slug>.json      # カテゴリ定義
-├── article.json                # ← 生成物: 全記事 manifest
-├── slug-index.json             # ← 生成物: slug → uuid マップ
-└── categories.json             # ← 生成物: カテゴリ一覧
+.
+├── cloudflare.config.ts        # Worker 定義 (名前、assets、run_worker_first、バインディング)
+├── wrangler.config.ts          # ビルド設定 (assets ディレクトリ、build.command = hagaki generate)
+├── src/index.ts                # 配信 worker (hagaki/content-worker の createContentApp)
+├── .github/workflows/deploy.yml
+└── content/
+    ├── article/
+    │   └── <uuid>/                 # 記事ディレクトリ (uuid = frontmatter の uuid)
+    │       ├── index.mdx           #   記事本体 (frontmatter + MDX)
+    │       ├── info.json           #   ← 生成物 (履歴マージ済みメタデータ)
+    │       └── assets/
+    │           └── <imageId>.avif  #   その記事に属する画像 (AVIF 固定)
+    ├── categories/<slug>.json      # カテゴリ定義
+    ├── article.json                # ← 生成物: 全記事 manifest
+    ├── slug-index.json             # ← 生成物: slug → uuid マップ
+    └── categories.json             # ← 生成物: カテゴリ一覧
 ```
 
-生成物 (`*.json` のうち `article.json` / `slug-index.json` / `categories.json` /
-`article/*/info.json`) は git 管理外です。デプロイ前に必ず `pnpm generate` で
-作り直します (`.github/workflows/deploy.yml` が push 時に自動実行)。
-生成は hagaki の CLI (`pnpm generate` = `hagaki generate`) が行い、
-`draft: true` の記事は `article.json` / `slug-index.json` に載りません。
+生成物 (`article.json` / `slug-index.json` / `categories.json` /
+`article/*/info.json`) は git 管理外です。`cf build` / `cf dev` が
+`wrangler.config.ts` の `build.command` で毎回 `hagaki generate` を実行して
+作り直します (単体で作るなら `pnpm generate`)。`draft: true` の記事は
+`article.json` / `slug-index.json` に載りません。`info.json` の履歴は
+git log から作るため、浅い clone では履歴が欠けます。
 
 > [!NOTE]
 > hagaki は `github:Nlkomaru/hagaki#dist`（hagaki の CI が main への push ごとに
 > 発行するビルド済みブランチ）への依存で、lockfile がそのコミット SHA を
-> 固定します。インストール時にビルドは走りません。hagaki 側の更新を反映する
-> には `pnpm update hagaki` を実行して lockfile をコミットしてください。
+> 固定します。hagaki 側の更新を反映するには `pnpm update hagaki` を実行して
+> lockfile をコミットしてください。
 
-## 配信 URL
+## 配信パス
 
-配信元は Cloudflare Workers の `wiki-v2-content`。独自ドメイン
-`wiki-content.moripa.nikomaru.dev` を正とし、`wiki-v2-content.nikomaru.workers.dev`
-も移行期間として残している。
-
-`/article/*` は `run_worker_first` で `hagaki/content-worker` の Hono app
+`/article/*` は `runWorkerFirst` で `hagaki/content-worker` の Hono app
 (`src/index.ts`) を通り、`draft: true` の記事 (`index.mdx` / `info.json` /
-`assets/*`) は 404 になる。manifest 類はそのまま静的配信。
+`assets/*`) は 404 になります。manifest 類はそのまま静的配信します。
 
 | パス | 内容 |
 |---|---|
@@ -114,40 +116,52 @@ manifest 側にも載せています。
 
 ## ローカル開発
 
-```sh
-pnpm install
-pnpm generate       # article.json などを再生成
-pnpm dev            # http://localhost:8787
-```
-
-## 手動デプロイ
+Node.js 26.12 以上 (`.node-version`) と pnpm 12 (`packageManager`) を使います。
 
 ```sh
 pnpm install
-pnpm deploy         # generate → wrangler deploy
+pnpm exec cf dev    # hagaki generate → http://localhost:8787
 ```
 
-## CI 自動デプロイのセットアップ
+## デプロイ
 
-GitHub Actions (`.github/workflows/deploy.yml`) が main への push で
-`pnpm generate` → `wrangler deploy` を実行します。以下の secret が必要です。
+### GitHub Actions
 
-1. **Cloudflare API token** を発行
-   - <https://dash.cloudflare.com/profile/api-tokens> →
-     **Create Token** → **Edit Cloudflare Workers** テンプレート
-2. リポジトリの Settings → **Secrets and variables → Actions** に追加
-   - `CLOUDFLARE_API_TOKEN`
-   - `CLOUDFLARE_ACCOUNT_ID`
+`.github/workflows/deploy.yml` が次を実行します。
 
-`info.json` の履歴マージには git の全履歴が必要なため、workflow の checkout は
-`fetch-depth: 0` になっています (浅い clone では git 由来の履歴が欠けます)。
+- pull request / 手動実行 (workflow_dispatch): typecheck → `cf build` → `cf deploy --dry-run` (アップロードしない)
+- main への push: 上記に続けて `cf deploy` で本番反映
+
+checkout は `fetch-depth: 0` (info.json の履歴マージに全履歴が必要) です。
+
+### 手動
+
+```sh
+pnpm exec cf build --mode production
+pnpm exec cf deploy --prebuilt --mode production
+```
+
+`cf` はカレントディレクトリの `.env` から `CLOUDFLARE_ACCOUNT_ID` /
+`CLOUDFLARE_API_TOKEN` を読みます。
+
+## 初回セットアップ
+
+1. Cloudflare API token を発行する
+   (<https://dash.cloudflare.com/profile/api-tokens> → **Edit Cloudflare Workers** テンプレート)
+2. `.env.example` を `.env` にコピーし、`CLOUDFLARE_ACCOUNT_ID` と `CLOUDFLARE_API_TOKEN` を埋める
+   (`.env` は git 管理外)
+3. GitHub Actions の secrets に登録する
+
+   ```sh
+   gh secret set -f .env
+   ```
 
 ## wiki-frontend との連携
 
 wiki-frontend はこのリポジトリを
 
-- 読み取り: `https://wiki-content.moripa.nikomaru.dev` (Workers Assets)
-- 書き込み: GitHub API 経由のコミット (`Nlkomaru/wiki-content`)
+- 読み取り: `https://wiki-content.<subdomain>.workers.dev` (Workers Assets)
+- 書き込み: GitHub API 経由のコミット (`morinoparty/wiki-content`)
 
 として参照します。エディタからの保存はこのリポジトリへのコミットとして届き、
 main に入ると Actions が走って worker に反映されます。
