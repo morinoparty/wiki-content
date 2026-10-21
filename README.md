@@ -1,10 +1,10 @@
 # wiki-content
 
 MoripaWiki ([wiki-frontend](https://github.com/morinoparty/wiki-frontend)) のコンテンツリポジトリ。
-[hagaki のコンテンツフォーマット](https://github.com/Nlkomaru/hagaki/blob/main/sample/README.md)に従い、
+[hagaki のコンテンツフォーマット](https://github.com/morinoparty/hagaki/blob/main/sample/README.md)に従い、
 `content/` を Cloudflare Workers (Workers Assets) で配信します。index 群の生成
 (`hagaki generate`) と配信 worker (`hagaki/content-worker`) は
-[hagaki](https://github.com/Nlkomaru/hagaki) をライブラリとして使います。
+[hagaki](https://github.com/morinoparty/hagaki) をライブラリとして使います。
 
 - 配信 URL: `https://wiki-content.<subdomain>.workers.dev` (Worker 名 `wiki-content`。独自ドメインなし)
 - デプロイ: Cloudflare CLI [`cf`](https://developers.cloudflare.com/cf/) (beta)。main への push で GitHub Actions が実行
@@ -38,10 +38,10 @@ MoripaWiki ([wiki-frontend](https://github.com/morinoparty/wiki-frontend)) の�
 git log から作るため、浅い clone では履歴が欠けます。
 
 > [!NOTE]
-> hagaki は `github:Nlkomaru/hagaki#dist`（hagaki の CI が main への push ごとに
-> 発行するビルド済みブランチ）への依存で、lockfile がそのコミット SHA を
-> 固定します。hagaki 側の更新を反映するには `pnpm update hagaki` を実行して
-> lockfile をコミットしてください。
+> hagaki は GitHub Packages の `@morinoparty/hagaki` に依存します（`.npmrc` で
+> `@morinoparty` スコープを GitHub Packages に向けています。ローカルでは
+> `read:packages` を持つトークンが `~/.npmrc` に必要です）。新しい版を取り込むには
+> `pnpm update @morinoparty/hagaki` を実行して lockfile をコミットしてください。
 
 ## 配信パス
 
