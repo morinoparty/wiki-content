@@ -56,7 +56,7 @@ modified:
 ## カテゴリ
 
 - カテゴリは `content/categories/<slug>.json` に置きます (`title`, `slug`, `body`, 任意の `option`)。ファイル名と `slug` を一致させてください。
-- `option` はそのカテゴリの記事が持つ追加項目の定義です (例: `city.json` の `x` / `y` 座標)。
+- `option` はそのカテゴリの記事が持つ追加項目の定義です。
 
 ## 生成物
 
