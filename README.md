@@ -74,7 +74,7 @@ thumbnail:
   blurhash64: VUhLMGc4JCV4XlZzfld4dFJpdFIlZ05iTXtWQHNTb2ZWQHNv
 modified:
   - date: 2022-02-19T02:25:05.827Z
-    player: f8b761ec-4a54-48eb-a040-c5604042bcc9
+    userId: f8b761ec-4a54-48eb-a040-c5604042bcc9
 ---
 ```
 
@@ -93,24 +93,42 @@ modified:
 - `modified[0]` = 旧 wiki の `date` (記事の作成/最終更新日時)
 - 本文末尾にあった「編集者: …／最終更新日: …」の記述を拾えた場合はその分も追加
 
-を入れています。旧 wiki は編集者を Minecraft の**表示名**でしか記録していないため、
-Mojang API で UUID を解決できたものだけ `player` を持ちます (解決できないものは
-`player` を省略)。`hagaki generate` は `player` が無いエントリを `player: null`
-として扱います。
+を入れています。`userId` は編集者の認証ユーザー ID (better-auth の `session.user.id`)
+で、hagaki は ID の中身を解釈しません。この wiki は MineAuth でログインするため、
+値は Minecraft の UUID になります。旧 wiki は編集者を Minecraft の**表示名**でしか
+記録していないため、Mojang API で UUID を解決できたものだけ `userId` を持ちます
+(解決できないものは `userId` を省略)。`hagaki generate` は `userId` が無いエントリを
+`userId: null` として扱います。
+
+このキーは以前 `player` でした。hagaki 0.4 の改名 (破壊的変更) に合わせて全記事を
+`userId` に書き換えています。hagaki 0.4 は `player` を読みません。
+
+> [!IMPORTANT]
+> この書き換えは、次の順序を守ってマージします。
+>
+> 1. `player` を `userId` に改名した hagaki (0.4.0) をリリースします。
+> 2. この変更と同じ PR で `pnpm update @morinoparty/hagaki` を実行し、lockfile を
+>    コミットします。`package.json` だけが `^0.4.0` で lockfile が 0.2.0 のままだと、
+>    Actions の `pnpm install --frozen-lockfile` が失敗します。
+> 3. wiki-frontend を、`userId` を読み書きできる hagaki に上げてデプロイします。
+>    wiki-frontend が hagaki 0.3 のまま `userId` に書き換えた記事を保存すると、
+>    hagaki 0.3 は `modified[].userId` を読めないため、保存したコミットから
+>    `modified` が丸ごと消えます。wiki-frontend の更新とこの PR のマージを同時に
+>    行うか、それまでダッシュボードからの編集を止めてください。
 
 ### `editors` (manifest の生成物)
 
-`article.json` の各エントリは、`info.json` の `history` をプレイヤーごとに畳んだ
-`editors` を持ちます。
+`article.json` の各エントリは、`info.json` の `history` をユーザー (`userId`) ごとに
+畳んだ `editors` を持ちます。
 
 ```json
 "editors": [
-  { "player": "85c6a9e3-…", "edits": 3, "lastEditedAt": "2026-08-09T15:13:17.000Z" }
+  { "userId": "85c6a9e3-…", "edits": 3, "lastEditedAt": "2026-08-09T15:13:17.000Z" }
 ]
 ```
 
-`player` が解決できない履歴 (移行前の表示名のみの記録、`"<name> (<uuid>)"` 規約で
-ないコミット) は含みません。wiki-frontend のダッシュボードが「自分が編集に
+`userId` が分からない履歴 (移行前の表示名のみの記録、コミッター名が
+`"<name> (<userId>)"` 規約でないコミット) は含みません。wiki-frontend のダッシュボードが「自分が編集に
 関わった記事」を出すのに使うため、記事数ぶんの `info.json` を引かなくて済むよう
 manifest 側にも載せています。
 
