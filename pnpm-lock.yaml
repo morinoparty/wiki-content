@@ -957,7 +957,7 @@ packages:
       react-dom: '>= 18 || >= 19'
 
   '@morinoparty/hagaki@0.4.0':
-    resolution: {integrity: sha512-3Z0autGBsuroUbKugX+hc0tiF6i03NvgxK34gPzz5rv6ii8rTL9YXzhfmKOqljpZ4fYQiCQ5PK9mrlvFio2lSA==, tarball: https://npm.pkg.github.com/download/@morinoparty/hagaki/0.4.0/12f18703373f78df3041a506a1d8c07b418c476f}
+    resolution: {integrity: sha512-XMTG052hODokoqMIX8PutRkHvG+GFm7si2DyHpTk1rIV2ez2mXpi4UG6WfzSWob72T1JOYlNKE3a+ntPua4ghQ==}
     engines: {node: '>=26.12.0'}
     hasBin: true
     peerDependencies:
@@ -966,6 +966,17 @@ packages:
       lexical: ^0.48.0
       react: '>=18'
       react-dom: '>=18'
+    peerDependenciesMeta:
+      '@mdxeditor/editor':
+        optional: true
+      '@mdxeditor/gurx':
+        optional: true
+      lexical:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   '@octokit/app@16.1.4':
     resolution: {integrity: sha512-g70WONQyGoBgqIJtv4O0MUEfOF1iJpTfFt3qAW7HaiwiJ6k607xg/gBezCa4tuq6BpO6qXn7qvq8v9tjWtgGQg==}
@@ -2294,7 +2305,8 @@ packages:
 
 snapshots:
 
-  '@babel/runtime@7.29.10': {}
+  '@babel/runtime@7.29.10':
+    optional: true
 
   '@cloudflare/build-output-utils@0.9.3':
     dependencies:
@@ -2342,6 +2354,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
       '@lezer/common': 1.5.3
+    optional: true
 
   '@codemirror/commands@6.11.1':
     dependencies:
@@ -2349,6 +2362,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
       '@lezer/common': 1.5.3
+    optional: true
 
   '@codemirror/lang-angular@0.1.4':
     dependencies:
@@ -2358,11 +2372,13 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-cpp@6.0.3':
     dependencies:
       '@codemirror/language': 6.13.1
       '@lezer/cpp': 1.1.6
+    optional: true
 
   '@codemirror/lang-css@6.3.1':
     dependencies:
@@ -2371,6 +2387,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@lezer/common': 1.5.3
       '@lezer/css': 1.3.9
+    optional: true
 
   '@codemirror/lang-go@6.0.1':
     dependencies:
@@ -2379,6 +2396,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@lezer/common': 1.5.3
       '@lezer/go': 1.0.1
+    optional: true
 
   '@codemirror/lang-html@6.4.12':
     dependencies:
@@ -2391,11 +2409,13 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/css': 1.3.9
       '@lezer/html': 1.3.13
+    optional: true
 
   '@codemirror/lang-java@6.0.2':
     dependencies:
       '@codemirror/language': 6.13.1
       '@lezer/java': 1.1.5
+    optional: true
 
   '@codemirror/lang-javascript@6.2.5':
     dependencies:
@@ -2406,6 +2426,7 @@ snapshots:
       '@codemirror/view': 6.43.15
       '@lezer/common': 1.5.3
       '@lezer/javascript': 1.5.6
+    optional: true
 
   '@codemirror/lang-jinja@6.0.1':
     dependencies:
@@ -2417,11 +2438,13 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-json@6.0.2':
     dependencies:
       '@codemirror/language': 6.13.1
       '@lezer/json': 1.0.3
+    optional: true
 
   '@codemirror/lang-less@6.0.2':
     dependencies:
@@ -2430,6 +2453,7 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-liquid@6.3.3':
     dependencies:
@@ -2441,6 +2465,7 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-markdown@6.5.2':
     dependencies:
@@ -2451,6 +2476,7 @@ snapshots:
       '@codemirror/view': 6.43.15
       '@lezer/common': 1.5.3
       '@lezer/markdown': 1.8.1
+    optional: true
 
   '@codemirror/lang-php@6.0.2':
     dependencies:
@@ -2459,6 +2485,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@lezer/common': 1.5.3
       '@lezer/php': 1.0.6
+    optional: true
 
   '@codemirror/lang-python@6.2.1':
     dependencies:
@@ -2467,11 +2494,13 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@lezer/common': 1.5.3
       '@lezer/python': 1.1.19
+    optional: true
 
   '@codemirror/lang-rust@6.0.2':
     dependencies:
       '@codemirror/language': 6.13.1
       '@lezer/rust': 1.0.3
+    optional: true
 
   '@codemirror/lang-sass@6.0.2':
     dependencies:
@@ -2480,6 +2509,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@lezer/common': 1.5.3
       '@lezer/sass': 1.1.0
+    optional: true
 
   '@codemirror/lang-sql@6.10.0':
     dependencies:
@@ -2489,6 +2519,7 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-vue@0.1.3':
     dependencies:
@@ -2498,6 +2529,7 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-wast@6.0.2':
     dependencies:
@@ -2505,6 +2537,7 @@ snapshots:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@codemirror/lang-xml@6.1.0':
     dependencies:
@@ -2514,6 +2547,7 @@ snapshots:
       '@codemirror/view': 6.43.15
       '@lezer/common': 1.5.3
       '@lezer/xml': 1.0.6
+    optional: true
 
   '@codemirror/lang-yaml@6.1.3':
     dependencies:
@@ -2524,6 +2558,7 @@ snapshots:
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
       '@lezer/yaml': 1.0.4
+    optional: true
 
   '@codemirror/language-data@6.5.2':
     dependencies:
@@ -2550,6 +2585,7 @@ snapshots:
       '@codemirror/lang-yaml': 6.1.3
       '@codemirror/language': 6.13.1
       '@codemirror/legacy-modes': 6.5.5
+    optional: true
 
   '@codemirror/language@6.13.1':
     dependencies:
@@ -2560,16 +2596,19 @@ snapshots:
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
       style-mod: 4.1.4
+    optional: true
 
   '@codemirror/legacy-modes@6.5.5':
     dependencies:
       '@codemirror/streamparser': 6.0.0
+    optional: true
 
   '@codemirror/lint@6.9.7':
     dependencies:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
       crelt: 1.0.7
+    optional: true
 
   '@codemirror/merge@6.12.3':
     dependencies:
@@ -2578,18 +2617,22 @@ snapshots:
       '@codemirror/view': 6.43.15
       '@lezer/highlight': 1.2.5
       style-mod: 4.1.4
+    optional: true
 
   '@codemirror/search@6.7.2':
     dependencies:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
       crelt: 1.0.7
+    optional: true
 
   '@codemirror/state@6.7.6':
     dependencies:
       '@marijn/find-cluster-break': 1.0.4
+    optional: true
 
-  '@codemirror/streamparser@6.0.0': {}
+  '@codemirror/streamparser@6.0.0':
+    optional: true
 
   '@codemirror/view@6.43.15':
     dependencies:
@@ -2597,6 +2640,7 @@ snapshots:
       crelt: 1.0.7
       style-mod: 4.1.4
       w3c-keyname: 2.2.8
+    optional: true
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -2688,17 +2732,20 @@ snapshots:
   '@floating-ui/core@1.8.0':
     dependencies:
       '@floating-ui/utils': 0.2.12
+    optional: true
 
   '@floating-ui/dom@1.8.0':
     dependencies:
       '@floating-ui/core': 1.8.0
       '@floating-ui/utils': 0.2.12
+    optional: true
 
   '@floating-ui/react-dom@2.1.9(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@floating-ui/dom': 1.8.0
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@floating-ui/react@0.27.20(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -2707,8 +2754,10 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
       tabbable: 6.5.0
+    optional: true
 
-  '@floating-ui/utils@0.2.12': {}
+  '@floating-ui/utils@0.2.12':
+    optional: true
 
   '@img/colour@1.1.0': {}
 
@@ -2836,6 +2885,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/clipboard@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2849,6 +2899,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/code-core@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2859,6 +2910,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/devtools-core@0.48.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)':
     dependencies:
@@ -2872,6 +2924,7 @@ snapshots:
       react-dom: 19.3.1(react@19.3.1)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/dragon@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2879,6 +2932,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/extension@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2888,6 +2942,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/hashtag@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2896,6 +2951,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/history@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2904,6 +2960,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/html@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2914,10 +2971,12 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/internal@0.48.0(typescript@7.0.2)':
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/link@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2928,6 +2987,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/list@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2938,6 +2998,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/mark@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2945,6 +3006,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/markdown@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2959,12 +3021,14 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/overflow@0.48.0(typescript@7.0.2)':
     dependencies:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/plain-text@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -2976,6 +3040,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/react@0.48.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)(yjs@13.6.33)':
     dependencies:
@@ -3004,6 +3069,7 @@ snapshots:
     optionalDependencies:
       typescript: 7.0.2
       yjs: 13.6.33
+    optional: true
 
   '@lexical/rich-text@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -3016,6 +3082,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/selection@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -3023,6 +3090,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/table@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -3034,6 +3102,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/text@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -3041,6 +3110,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/utils@0.48.0(typescript@7.0.2)':
     dependencies:
@@ -3049,6 +3119,7 @@ snapshots:
       lexical: 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   '@lexical/yjs@0.48.0(typescript@7.0.2)(yjs@13.6.33)':
     dependencies:
@@ -3058,101 +3129,120 @@ snapshots:
       yjs: 13.6.33
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
-  '@lezer/common@1.5.3': {}
+  '@lezer/common@1.5.3':
+    optional: true
 
   '@lezer/cpp@1.1.6':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/css@1.3.9':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/go@1.0.1':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/highlight@1.2.5':
     dependencies:
       '@lezer/common': 1.5.3
+    optional: true
 
   '@lezer/html@1.3.13':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/java@1.1.5':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/javascript@1.5.6':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/json@1.0.3':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/lr@1.4.11':
     dependencies:
       '@lezer/common': 1.5.3
+    optional: true
 
   '@lezer/markdown@1.8.1':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
+    optional: true
 
   '@lezer/php@1.0.6':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/python@1.1.19':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/rust@1.0.3':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/sass@1.1.0':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/xml@1.0.6':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
   '@lezer/yaml@1.0.4':
     dependencies:
       '@lezer/common': 1.5.3
       '@lezer/highlight': 1.2.5
       '@lezer/lr': 1.4.11
+    optional: true
 
-  '@marijn/find-cluster-break@1.0.4': {}
+  '@marijn/find-cluster-break@1.0.4':
+    optional: true
 
   '@mdxeditor/editor@4.3.3(@codemirror/language@6.13.1)(@lezer/highlight@1.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.33)':
     dependencies:
@@ -3223,28 +3313,31 @@ snapshots:
       - supports-color
       - typescript
       - yjs
+    optional: true
 
   '@mdxeditor/gurx@1.2.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@morinoparty/hagaki@0.4.0(@mdxeditor/editor@4.3.3(@codemirror/language@6.13.1)(@lezer/highlight@1.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.33))(@mdxeditor/gurx@1.2.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(lexical@0.48.0(typescript@7.0.2))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@jsquash/avif': 2.1.1
-      '@mdxeditor/editor': 4.3.3(@codemirror/language@6.13.1)(@lezer/highlight@1.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.33)
-      '@mdxeditor/gurx': 1.2.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       blurhash: 2.0.5
       gray-matter: 4.0.3
       hono: 4.13.13
-      lexical: 0.48.0(typescript@7.0.2)
       octokit: 5.0.5
-      react: 19.3.1
-      react-dom: 19.3.1(react@19.3.1)
       remark-mdx: 3.1.1(supports-color@10.2.2)
       remark-parse: 11.0.0(supports-color@10.2.2)
       unified: 11.0.5
       uuid: 14.0.3
+    optionalDependencies:
+      '@mdxeditor/editor': 4.3.3(@codemirror/language@6.13.1)(@lezer/highlight@1.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.33)
+      '@mdxeditor/gurx': 1.2.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      lexical: 0.48.0(typescript@7.0.2)
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -3425,19 +3518,24 @@ snapshots:
 
   '@poppinss/exception@1.2.3': {}
 
-  '@preact/signals-core@1.14.4': {}
+  '@preact/signals-core@1.14.4':
+    optional: true
 
-  '@radix-ui/colors@3.0.0': {}
+  '@radix-ui/colors@3.0.0':
+    optional: true
 
-  '@radix-ui/number@1.1.3': {}
+  '@radix-ui/number@1.1.3':
+    optional: true
 
-  '@radix-ui/primitive@1.2.0': {}
+  '@radix-ui/primitive@1.2.0':
+    optional: true
 
   '@radix-ui/react-arrow@1.1.17(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@radix-ui/react-primitive': 2.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-collection@1.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3448,14 +3546,17 @@ snapshots:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-compose-refs@1.1.5(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-context@1.3.0(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-dialog@1.3.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3476,10 +3577,12 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
       react-remove-scroll: 2.7.2(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-direction@1.2.0(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-dismissable-layer@1.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3490,10 +3593,12 @@ snapshots:
       '@radix-ui/react-use-effect-event': 0.0.5(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-focus-guards@1.2.0(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-focus-scope@1.3.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3502,15 +3607,18 @@ snapshots:
       '@radix-ui/react-use-callback-ref': 1.1.5(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-icons@1.3.2(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-id@1.1.4(react@19.3.1)':
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-popover@1.3.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3532,6 +3640,7 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
       react-remove-scroll: 2.7.2(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-popper@1.4.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3547,6 +3656,7 @@ snapshots:
       '@radix-ui/rect': 1.1.3
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-portal@1.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3554,18 +3664,21 @@ snapshots:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-presence@1.1.11(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-primitive@2.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@radix-ui/react-slot': 1.5.0(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-roving-focus@1.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3582,6 +3695,7 @@ snapshots:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-select@2.4.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3608,17 +3722,20 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
       react-remove-scroll: 2.7.2(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-separator@1.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@radix-ui/react-primitive': 2.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-slot@1.5.0(react@19.3.1)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.5(react@19.3.1)
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-toggle-group@1.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3631,6 +3748,7 @@ snapshots:
       '@radix-ui/react-use-controllable-state': 1.3.0(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-toggle@1.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3639,6 +3757,7 @@ snapshots:
       '@radix-ui/react-use-controllable-state': 1.3.0(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-toolbar@1.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3651,6 +3770,7 @@ snapshots:
       '@radix-ui/react-toggle-group': 1.2.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-tooltip@1.4.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -3670,11 +3790,13 @@ snapshots:
       '@radix-ui/react-visually-hidden': 1.2.13(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
   '@radix-ui/react-use-callback-ref@1.1.5(react@19.3.1)':
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-use-controllable-state@1.3.0(react@19.3.1)':
     dependencies:
@@ -3682,37 +3804,45 @@ snapshots:
       '@radix-ui/react-use-effect-event': 0.0.5(react@19.3.1)
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-use-effect-event@0.0.5(react@19.3.1)':
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-use-is-hydrated@0.1.3(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-use-layout-effect@1.1.4(react@19.3.1)':
     dependencies:
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-use-rect@1.1.4(react@19.3.1)':
     dependencies:
       '@radix-ui/rect': 1.1.3
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-use-size@1.1.5(react@19.3.1)':
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.4(react@19.3.1)
       react: 19.3.1
+    optional: true
 
   '@radix-ui/react-visually-hidden@1.2.13(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@radix-ui/react-primitive': 2.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    optional: true
 
-  '@radix-ui/rect@1.1.3': {}
+  '@radix-ui/rect@1.1.3':
+    optional: true
 
   '@sindresorhus/is@7.2.0': {}
 
@@ -3744,7 +3874,8 @@ snapshots:
     dependencies:
       undici-types: 8.9.0
 
-  '@types/trusted-types@2.0.7': {}
+  '@types/trusted-types@2.0.7':
+    optional: true
 
   '@types/unist@2.0.11': {}
 
@@ -3820,11 +3951,13 @@ snapshots:
     dependencies:
       sprintf-js: 1.0.3
 
-  argparse@2.0.1: {}
+  argparse@2.0.1:
+    optional: true
 
   aria-hidden@1.2.6:
     dependencies:
       tslib: 2.8.1
+    optional: true
 
   bail@2.0.2: {}
 
@@ -3858,7 +3991,8 @@ snapshots:
 
   character-reference-invalid@2.0.1: {}
 
-  classnames@2.5.1: {}
+  classnames@2.5.1:
+    optional: true
 
   cm6-theme-basic-light@0.2.0(@codemirror/language@6.13.1)(@codemirror/state@6.7.6)(@codemirror/view@6.43.15)(@lezer/highlight@1.2.5):
     dependencies:
@@ -3866,6 +4000,7 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
       '@lezer/highlight': 1.2.5
+    optional: true
 
   codemirror@6.0.2:
     dependencies:
@@ -3876,14 +4011,17 @@ snapshots:
       '@codemirror/search': 6.7.2
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
+    optional: true
 
-  compute-scroll-into-view@2.0.4: {}
+  compute-scroll-into-view@2.0.4:
+    optional: true
 
   content-type@3.1.1: {}
 
   cookie@1.1.1: {}
 
-  crelt@1.0.7: {}
+  crelt@1.0.7:
+    optional: true
 
   debug@4.4.3(supports-color@10.2.2):
     dependencies:
@@ -3899,13 +4037,15 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  detect-node-es@1.1.0: {}
+  detect-node-es@1.1.0:
+    optional: true
 
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
 
-  diff@5.2.2: {}
+  diff@5.2.2:
+    optional: true
 
   downshift@7.6.2(react@19.3.1):
     dependencies:
@@ -3915,6 +4055,7 @@ snapshots:
       react: 19.3.1
       react-is: 17.0.2
       tslib: 2.8.1
+    optional: true
 
   error-stack-parser-es@1.0.5: {}
 
@@ -3947,7 +4088,8 @@ snapshots:
       '@esbuild/win32-ia32': 0.28.2
       '@esbuild/win32-x64': 0.28.2
 
-  escape-string-regexp@5.0.0: {}
+  escape-string-regexp@5.0.0:
+    optional: true
 
   esprima@4.0.1: {}
 
@@ -3967,13 +4109,16 @@ snapshots:
   fault@2.0.1:
     dependencies:
       format: 0.2.2
+    optional: true
 
-  format@0.2.2: {}
+  format@0.2.2:
+    optional: true
 
   fsevents@2.3.3:
     optional: true
 
-  get-nonce@1.0.1: {}
+  get-nonce@1.0.1:
+    optional: true
 
   gray-matter@4.0.3:
     dependencies:
@@ -3999,9 +4144,11 @@ snapshots:
 
   is-plain-obj@4.1.0: {}
 
-  isomorphic.js@0.2.5: {}
+  isomorphic.js@0.2.5:
+    optional: true
 
-  js-tokens@4.0.0: {}
+  js-tokens@4.0.0:
+    optional: true
 
   js-yaml@3.15.2:
     dependencies:
@@ -4011,6 +4158,7 @@ snapshots:
   js-yaml@4.3.2:
     dependencies:
       argparse: 2.0.1
+    optional: true
 
   json-with-bigint@3.5.12: {}
 
@@ -4023,18 +4171,22 @@ snapshots:
       '@lexical/internal': 0.48.0(typescript@7.0.2)
     optionalDependencies:
       typescript: 7.0.2
+    optional: true
 
   lib0@0.2.119:
     dependencies:
       isomorphic.js: 0.2.5
+    optional: true
 
   longest-streak@3.1.0: {}
 
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+    optional: true
 
-  markdown-table@3.0.4: {}
+  markdown-table@3.0.4:
+    optional: true
 
   mdast-util-directive@3.1.1(supports-color@10.2.2):
     dependencies:
@@ -4050,6 +4202,7 @@ snapshots:
       unist-util-visit-parents: 6.0.2
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   mdast-util-from-markdown@2.1.0(supports-color@10.2.2):
     dependencies:
@@ -4078,6 +4231,7 @@ snapshots:
       micromark-extension-frontmatter: 2.0.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   mdast-util-gfm-strikethrough@2.0.1(supports-color@10.2.2):
     dependencies:
@@ -4086,6 +4240,7 @@ snapshots:
       mdast-util-to-markdown: 2.2.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   mdast-util-gfm-table@2.0.0(supports-color@10.2.2):
     dependencies:
@@ -4096,6 +4251,7 @@ snapshots:
       mdast-util-to-markdown: 2.2.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   mdast-util-gfm-task-list-item@2.0.0(supports-color@10.2.2):
     dependencies:
@@ -4105,10 +4261,12 @@ snapshots:
       mdast-util-to-markdown: 2.2.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   mdast-util-highlight-mark@1.2.2:
     dependencies:
       micromark-extension-highlight-mark: 1.2.0
+    optional: true
 
   mdast-util-mdx-expression@2.0.1(supports-color@10.2.2):
     dependencies:
@@ -4211,6 +4369,7 @@ snapshots:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.3
       parse-entities: 4.0.2
+    optional: true
 
   micromark-extension-frontmatter@2.0.0:
     dependencies:
@@ -4218,6 +4377,7 @@ snapshots:
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.3
+    optional: true
 
   micromark-extension-gfm-strikethrough@2.1.0:
     dependencies:
@@ -4227,6 +4387,7 @@ snapshots:
       micromark-util-resolve-all: 2.0.1
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.3
+    optional: true
 
   micromark-extension-gfm-table@2.1.2:
     dependencies:
@@ -4235,6 +4396,7 @@ snapshots:
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.3
+    optional: true
 
   micromark-extension-gfm-task-list-item@2.1.0:
     dependencies:
@@ -4243,6 +4405,7 @@ snapshots:
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.3
+    optional: true
 
   micromark-extension-highlight-mark@1.2.0:
     dependencies:
@@ -4252,6 +4415,7 @@ snapshots:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.3
       uvu: 0.5.6
+    optional: true
 
   micromark-extension-mdx-expression@3.0.1:
     dependencies:
@@ -4458,11 +4622,13 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  mri@1.2.0: {}
+  mri@1.2.0:
+    optional: true
 
   ms@2.1.3: {}
 
-  object-assign@4.1.1: {}
+  object-assign@4.1.1:
+    optional: true
 
   octokit@5.0.5:
     dependencies:
@@ -4497,25 +4663,31 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+    optional: true
 
   react-dom@19.3.1(react@19.3.1):
     dependencies:
       react: 19.3.1
       scheduler: 0.28.0
+    optional: true
 
   react-hook-form@7.90.0(react@19.3.1):
     dependencies:
       react: 19.3.1
+    optional: true
 
-  react-is@16.13.1: {}
+  react-is@16.13.1:
+    optional: true
 
-  react-is@17.0.2: {}
+  react-is@17.0.2:
+    optional: true
 
   react-remove-scroll-bar@2.3.8(react@19.3.1):
     dependencies:
       react: 19.3.1
       react-style-singleton: 2.2.3(react@19.3.1)
       tslib: 2.8.1
+    optional: true
 
   react-remove-scroll@2.7.2(react@19.3.1):
     dependencies:
@@ -4525,14 +4697,17 @@ snapshots:
       tslib: 2.8.1
       use-callback-ref: 1.3.3(react@19.3.1)
       use-sidecar: 1.1.3(react@19.3.1)
+    optional: true
 
   react-style-singleton@2.2.3(react@19.3.1):
     dependencies:
       get-nonce: 1.0.1
       react: 19.3.1
       tslib: 2.8.1
+    optional: true
 
-  react@19.3.1: {}
+  react@19.3.1:
+    optional: true
 
   remark-mdx@3.1.1(supports-color@10.2.2):
     dependencies:
@@ -4553,8 +4728,10 @@ snapshots:
   sade@1.8.1:
     dependencies:
       mri: 1.2.0
+    optional: true
 
-  scheduler@0.28.0: {}
+  scheduler@0.28.0:
+    optional: true
 
   section-matter@1.0.0:
     dependencies:
@@ -4605,17 +4782,20 @@ snapshots:
 
   strip-bom-string@1.0.0: {}
 
-  style-mod@4.1.4: {}
+  style-mod@4.1.4:
+    optional: true
 
   supports-color@10.2.2: {}
 
-  tabbable@6.5.0: {}
+  tabbable@6.5.0:
+    optional: true
 
   toad-cache@3.7.4: {}
 
   trough@2.2.0: {}
 
-  tslib@2.8.1: {}
+  tslib@2.8.1:
+    optional: true
 
   typescript@7.0.2:
     optionalDependencies:
@@ -4651,6 +4831,7 @@ snapshots:
   unidiff@1.0.4:
     dependencies:
       diff: 5.2.2
+    optional: true
 
   unified@11.0.5:
     dependencies:
@@ -4693,12 +4874,14 @@ snapshots:
     dependencies:
       react: 19.3.1
       tslib: 2.8.1
+    optional: true
 
   use-sidecar@1.1.3(react@19.3.1):
     dependencies:
       detect-node-es: 1.1.0
       react: 19.3.1
       tslib: 2.8.1
+    optional: true
 
   uuid@14.0.3: {}
 
@@ -4708,6 +4891,7 @@ snapshots:
       diff: 5.2.2
       kleur: 4.1.5
       sade: 1.8.1
+    optional: true
 
   vfile-message@4.0.3:
     dependencies:
@@ -4719,7 +4903,8 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  w3c-keyname@2.2.8: {}
+  w3c-keyname@2.2.8:
+    optional: true
 
   wasm-feature-detect@1.9.0: {}
 
@@ -4753,6 +4938,7 @@ snapshots:
   yjs@13.6.33:
     dependencies:
       lib0: 0.2.119
+    optional: true
 
   youch-core@0.3.3:
     dependencies:

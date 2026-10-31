@@ -28,7 +28,7 @@
 
 ## ビルド・確認コマンド
 
-- 依存関係のインストール: `pnpm install` (`@morinoparty/hagaki` は GitHub Packages にあるため、ローカルでは `read:packages` を持つトークンが `~/.npmrc` に必要)
+- 依存関係のインストール: `pnpm install` (`@morinoparty/hagaki` は npm から入るのでトークン不要)
 - 型チェック: `pnpm run typecheck` (`cf workers types && tsc`)
 - ビルド: `pnpm run build` (`cf build --mode production`。`wrangler.config.ts` の `build.command` で `hagaki generate` が走り、index 群を作り直す)
 - index 群だけを生成: `pnpm run generate` (`hagaki generate`)

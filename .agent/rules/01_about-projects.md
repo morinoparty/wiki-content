@@ -36,7 +36,7 @@ wiki-frontend はこのリポジトリを次のように参照します。
 ## 主な技術スタック
 - TypeScript (`src/index.ts` と設定ファイル。`tsconfig.json` は strict)
 - MDX (記事本体。frontmatter は hagaki 仕様)
-- [hagaki](https://github.com/morinoparty/hagaki) (`@morinoparty/hagaki`。GitHub Packages から取得。index 生成と配信 worker)
+- [hagaki](https://github.com/morinoparty/hagaki) (`@morinoparty/hagaki`。npm から取得。index 生成と配信 worker)
 - Cloudflare Workers + Workers Assets
 - Cloudflare CLI `cf` (beta, `cf@1.0.0-beta.20`) と wrangler (`wrangler/experimental-config` によるビルド設定)
 - pnpm 12 (`packageManager: pnpm@12.14.0`) / Node.js 26.12 以上 (`.node-version`, `engines`)
