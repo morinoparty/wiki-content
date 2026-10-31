@@ -38,9 +38,9 @@ MoripaWiki ([wiki-frontend](https://github.com/morinoparty/wiki-frontend)) の�
 git log から作るため、浅い clone では履歴が欠けます。
 
 > [!NOTE]
-> hagaki は GitHub Packages の `@morinoparty/hagaki` に依存します（`.npmrc` で
-> `@morinoparty` スコープを GitHub Packages に向けています。ローカルでは
-> `read:packages` を持つトークンが `~/.npmrc` に必要です）。新しい版を取り込むには
+> hagaki は npm の `@morinoparty/hagaki` に依存します（`.npmrc` の設定やトークンは
+> 不要です。`~/.npmrc` に `@morinoparty:registry=https://npm.pkg.github.com` が
+> 残っている場合は GitHub Packages を読みにいくので削除してください）。新しい版を取り込むには
 > `pnpm update @morinoparty/hagaki` を実行して lockfile をコミットしてください。
 
 ## 配信パス

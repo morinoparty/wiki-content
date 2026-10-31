@@ -15,7 +15,7 @@
 3. GitHub Actions の secrets に登録する (`gh secret set -f .env`)。これはリモートの状態を変えるので、ユーザーに確認してから行ってください。
 
 ## 依存関係
-- `@morinoparty/hagaki` は GitHub Packages にあります (`.npmrc` で `@morinoparty` スコープを `https://npm.pkg.github.com` に向けています)。
+- `@morinoparty/hagaki` は npm から入れます。`.npmrc` の設定やトークンは不要です。`~/.npmrc` に `@morinoparty:registry=https://npm.pkg.github.com` があると GitHub Packages を読みにいくので、置かないでください。
 - `pnpm-workspace.yaml` の `minimumReleaseAgeExclude` に、公開から日が浅いため例外扱いしているパッケージの版が並んでいます。版を上げるときは必要に応じてここも更新してください。
 
 ## コンテンツ
